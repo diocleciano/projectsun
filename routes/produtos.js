@@ -8,7 +8,12 @@ const produtos = [
     { id: 3, nome: "Mouse", preco: 150 }
 ];
 
-// Criar rota POST /produtos
+// Rota GET /produtos
+router.get('/produtos', (req, res) => {
+    res.json(produtos);
+});
+
+// Rota POST /produtos
 router.post('/produtos', (req, res) => { 
     const { nome, preco } = req.body;
 
@@ -26,11 +31,6 @@ router.post('/produtos', (req, res) => {
 
     produtos.push(novoProduto);
     res.status(201).json(novoProduto);
-});
-
-// Rota GET /produtos
-router.get('/produtos', (req, res) => {
-    res.json(produtos);
 });
 
 module.exports = router;
