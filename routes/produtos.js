@@ -8,6 +8,11 @@ const produtos = [
     { id: 3, nome: "Mouse", preco: 150 }
 ];
 
+
+Router.post('/produtos', (req, res)=> { 
+    const {nome, preco} = req.body;
+    //calma ja volto
+})
 // rota GET /produtos
 router.get('/produtos', (req, res) => {
     res.json(produtos);
